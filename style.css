@@ -54,6 +54,7 @@ a:hover{ text-decoration: underline; text-decoration-color: rgba(143,134,170,.55
   align-items:center;
   gap: 12px;
 }
+
 .sigil{
   width: 44px;
   height: 44px;
@@ -71,6 +72,7 @@ a:hover{ text-decoration: underline; text-decoration-color: rgba(143,134,170,.55
   display:block;
   text-indent: -9999px; /* hides the word SIGIL */
 }
+
 .brand h1{
   margin:0;
   font-size: 16px;
