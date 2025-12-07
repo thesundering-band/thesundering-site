@@ -110,6 +110,28 @@ a:hover{ text-decoration: underline; text-decoration-color: rgba(143,134,170,.55
   padding: 18px 16px;
   background: rgba(0,0,0,.22);
   box-shadow: var(--shadow);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after{
+  content:"";
+  position:absolute;
+  inset:-40px;
+  pointer-events:none;
+  z-index:0;
+
+  background-image: url("assets/sigil.png");
+  background-repeat: repeat;
+  background-size: 220px 220px;
+  opacity: 0.05;
+  transform: rotate(-8deg);
+}
+
+.card > *{
+  position: relative;
+  z-index: 1;
 }
 
 .grid{
