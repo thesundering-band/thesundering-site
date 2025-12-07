@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Sundering — Flowchart</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .diagramWrap{
+      overflow:auto;
+      border: 1px solid rgba(143,134,170,.25);
+      border-radius: 18px;
+      background: rgba(0,0,0,.18);
+      padding: 10px;
+      box-shadow: var(--shadow);
+    }
+    /* Make Mermaid match your theme */
+    .mermaid{
+      min-width: 980px; /* allows horizontal scroll on mobile */
+    }
+  </style>
+
+  <!-- Mermaid (loaded from CDN) -->
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "dark",
+      themeVariables: {
+        background: "#050508",
+        primaryColor: "rgba(143,134,170,.18)",
+        primaryTextColor: "#e9e6f5",
+        primaryBorderColor: "rgba(143,134,170,.35)",
+        lineColor: "rgba(143,134,170,.45)",
+        tertiaryColor: "rgba(0,0,0,.25)",
+        fontFamily: "ui-monospace, Menlo, Consolas, monospace"
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="brand">
+        <div class="sigil">SIGIL</div>
+        <div>
+          <h1 class="glitch" data-text="FLOWCHART">FLOWCHART</h1>
+          <div class="sub">rite topology / one-page view</div>
+        </div>
+      </div>
+      <div class="nav">
+        <a href="index.html">ENTRY</a>
+        <a href="hallway.html">HALLWAY</a>
+        <a href="ending-escape.html">LISTEN</a>
+        <a href="ending-sundering.html">INITIATION</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>THE RITE — CURRENT STRUCTURE</h2>
+      <p class="tagline">
+        This is a full-map view of your pages and how they connect. Update the labels/links as you evolve v1.0.
+      </p>
+
+      <div class="diagramWrap">
+        <div class="mermaid">
+flowchart LR
+  A[ENTRY<br/>index.html] --> B[HALLWAY<br/>hallway.html]
+
+  B --> C[DOOR I: ALTAR<br/>room-altar.html]
+  B --> D[DOOR II: FRACTURE<br/>room-fracture.html]
+  B --> E[DOOR III: VEIL<br/>room-veil.html]
+  B --> F[DOOR IV: CHORUS<br/>room-chorus.html]
+  B --> G[DOOR V: ARCHIVE<br/>room-archive.html]
+  B -. "unseals after 5+ sigils" .-> H[ABYSS<br/>room-abyss.html]
+
+  %% Cross-links (from your current copy)
+  C --> D
+  C --> X[ESCAPE<br/>ending-escape.html]
+  C --> Y[INITIATION<br/>ending-sundering.html]
+
+  D --> E
+  D --> G
+  D --> X
+
+  E --> F
+  E --> Y
+  E --> X
+
+  F --> G
+  F --> C
+  F --> X
+
+  G --> Y
+  G --> X
+  G --> D
+
+  H --> Y
+  H --> X
+  H --> B
+
+  %% Global “escape” feel
+  A --> X
+  B --> X
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="choice">
+        <a class="btn" href="hallway.html">RETURN TO HALLWAY <small>test navigation</small></a>
+        <a class="btn" href="map.html">OPEN CLICKABLE MAP <small>(if you made map.html)</small></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
