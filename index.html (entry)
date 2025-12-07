@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" data-page="entry">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Sundering — Rite Interface</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="A ritual interface. A fractured world. The Sundering." />
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="brand">
+        <div class="sigil" title="Replace with your sigil later">SIGIL</div>
+        <div>
+          <h1 class="glitch" data-text="THE SUNDERING">THE SUNDERING</h1>
+          <div class="sub">brutal • progressive • intriguing</div>
+        </div>
+      </div>
+      <div class="nav">
+        <a href="ending-escape.html">LISTEN</a>
+        <a href="ending-escape.html#book">BOOK</a>
+        <a href="ending-escape.html#support">SUPPORT</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>ENTRY: RITE OF FRACTURE</h2>
+      <p>
+        Long ago, a cabal of mages tried to crack open the source of all magic.
+        They succeeded—for a moment. The world splintered into worlds.
+        The fracture still bleeds through.
+      </p>
+      <p class="tagline">
+        This is not a website. This is an interface for the surviving rites.
+      </p>
+
+      <div class="hr"></div>
+
+      <div class="evidence">
+        <div class="row">
+          <span class="label">STATUS:</span><span class="value">UNINITIATED</span>
+          <span class="label">PROTOCOL:</span><span class="value">RITE_V1.0</span>
+          <span class="label">COLOR:</span><span class="value">BLACK / PURPLE</span>
+        </div>
+        <div class="stamp">⚠️ WARNING: <span>Proceeding may result in alignment with the fracture.</span></div>
+      </div>
+
+      <div class="choice">
+        <a class="btn" href="hallway.html">
+          BEGIN THE RITE <small>mark the first sigil</small>
+        </a>
+        <a class="btn" href="ending-escape.html">
+          ESCAPE WITH YOUR LIFE <small>listen / book / support</small>
+        </a>
+      </div>
+
+      <div class="notice">
+        Tip: explore 5+ rooms to <b>unseal</b> deeper passages.
+      </div>
+    </div>
+
+    <div class="footer">
+      <div><span data-rite-progress></span></div>
+      <div>
+        <a href="ending-escape.html#links">LINKS</a> ·
+        <a href="ending-escape.html#contact">CONTACT</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="ritual.js"></script>
+</body>
+</html>
