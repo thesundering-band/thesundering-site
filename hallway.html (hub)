@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" data-page="hallway">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Sundering — Hallway</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="brand">
+        <div class="sigil">SIGIL</div>
+        <div>
+          <h1 class="glitch" data-text="THE SUNDERING">THE SUNDERING</h1>
+          <div class="sub">rite interface</div>
+        </div>
+      </div>
+      <div class="nav">
+        <a href="ending-escape.html">LISTEN</a>
+        <a href="ending-escape.html#book">BOOK</a>
+        <a href="index.html">RESTART</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>HALLWAY: THE RITES BRANCH HERE</h2>
+      <p>
+        The fracture is not a single wound. It is a corridor. Each door is a world
+        that shouldn’t exist.
+      </p>
+      <div class="evidence">
+        <div class="row">
+          <span class="label">INSTRUCTION:</span><span class="value">choose a door. leave an offering.</span>
+        </div>
+        <div class="stamp">SIGILS MARKED: <span data-rite-progress></span></div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="tagline">PRIMARY DOORS</div>
+          <div class="choice">
+            <a class="btn" href="room-altar.html">DOOR I: THE ALTAR <small>rite / vow / invocation</small></a>
+            <a class="btn" href="room-fracture.html">DOOR II: THE FRACTURE <small>the splintered worlds</small></a>
+            <a class="btn" href="room-veil.html">DOOR III: THE VEIL <small>what watches back</small></a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="tagline">SECONDARY DOORS</div>
+          <div class="choice">
+            <a class="btn" href="room-chorus.html">DOOR IV: THE CHORUS <small>voices / fragments</small></a>
+            <a class="btn" href="room-archive.html">DOOR V: THE ARCHIVE <small>artifacts / receipts</small></a>
+            <span data-secret-slot></span>
+          </div>
+          <div class="notice">
+            The deepest door unseals after enough sigils are marked.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div><a href="ending-escape.html">ESCAPE</a></div>
+        <div><a href="ending-sundering.html">ACCEPT THE SUNDERING</a></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="ritual.js"></script>
+</body>
+</html>
