@@ -60,17 +60,17 @@ a:hover{ text-decoration: underline; text-decoration-color: rgba(143,134,170,.55
   height: 44px;
   border-radius: 12px;
   border: 1px solid var(--line);
+  background: rgba(0,0,0,.25);
   box-shadow: 0 0 0 4px rgba(143,134,170,.06);
-
-  background-color: rgba(0,0,0,.25);
-  background-image: url("assets/sigil.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-
-  /* remove the text centering vibe */
-  display:block;
-  text-indent: -9999px; /* hides the word SIGIL */
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+}
+.sigil img{
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  opacity: .95;
 }
 
 .brand h1{
