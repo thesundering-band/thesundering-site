@@ -59,15 +59,17 @@ a:hover{ text-decoration: underline; text-decoration-color: rgba(143,134,170,.55
   height: 44px;
   border-radius: 12px;
   border: 1px solid var(--line);
-  background:
-    radial-gradient(circle at 30% 25%, rgba(143,134,170,.32), transparent 55%),
-    linear-gradient(135deg, rgba(143,134,170,.15), rgba(0,0,0,.1));
   box-shadow: 0 0 0 4px rgba(143,134,170,.06);
-  display:grid;
-  place-items:center;
-  font-family: var(--mono);
-  color: rgba(233,230,245,.8);
-  font-size: 12px;
+
+  background-color: rgba(0,0,0,.25);
+  background-image: url("assets/sigil.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  /* remove the text centering vibe */
+  display:block;
+  text-indent: -9999px; /* hides the word SIGIL */
 }
 .brand h1{
   margin:0;
