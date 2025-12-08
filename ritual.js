@@ -28,6 +28,15 @@
     const count = Object.keys(visited).length;
     el.textContent = `RITE PROGRESS: ${count}/8 SIGILS MARKED`;
   }
+  
+  const glyphs = [
+  { id:"source", name:"THE SOURCE", icon:"assets/glyphs/source.png", hint:"All power has a mouth.", reveal:"..." },
+  { id:"cabal", name:"THE CABAL", icon:"assets/glyphs/cabal.png", hint:"Hunger wearing a crown.", reveal:"..." },
+  { id:"breach", name:"THE BREACH", icon:"assets/glyphs/breach.png", hint:"A door that should not open.", reveal:"..." },
+  { id:"fracture", name:"THE FRACTURE", icon:"assets/glyphs/fracture.png", hint:"One world becomes many.", reveal:"..." },
+  { id:"veil", name:"THE VEIL", icon:"assets/glyphs/veil.png", hint:"What watches back.", reveal:"..." },
+  { id:"witness", name:"THE WITNESS", icon:"assets/glyphs/witness.png", hint:"You are part of the record.", reveal:"..." }
+];
 
   // Secret: if they visit enough, unlock “Mirror” link (or anything)
   const secretEl = document.querySelector("[data-secret-slot]");
