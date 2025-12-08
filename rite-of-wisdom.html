@@ -24,6 +24,76 @@
     </div>
 
     <div class="card">
+      <div class="audioBox">
+  <div class="top">
+    <span>RITE OF WISDOM</span>
+    <span class="kbd">earn the Word of Opening</span>
+  </div>
+
+  <p class="tagline">
+    RIDDLE: I fracture without a blade. I multiply without life. I am born from one mistake. What am I?
+  </p>
+
+  <input id="wisdomInput" placeholder="speak the answer…" style="width:100%;padding:12px;border-radius:12px;border:1px solid rgba(143,134,170,.35);background:rgba(0,0,0,.25);color:#fff;font-family:var(--mono);" />
+
+  <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;">
+    <button id="wisdomBtn" style="padding:10px 12px;border-radius:12px;border:1px solid rgba(143,134,170,.35);background:rgba(143,134,170,.10);color:#fff;font-family:var(--mono);cursor:pointer;">
+      SUBMIT
+    </button>
+    <span id="wisdomMsg" class="tagline"></span>
+  </div>
+
+  <div id="keyReveal" class="evidence" style="display:none; margin-top:12px;"></div>
+
+  <div class="notice" style="margin-top:10px;">
+    Hints: (1) It happened when the cabal cut too deep. (2) It became many.
+  </div>
+</div>
+
+<script>
+  // --- The Sundering: Wisdom -> Key (Option A: localStorage) ---
+  const KEY_STORAGE = "sundering_key_v1";
+  const KEY_WORD = "PEAK";
+
+  // Accept a few reasonable answers so people don't rage quit
+  const ACCEPTED = [
+    "world", "worlds",
+    "reality", "realities",
+    "fracture", "the fracture",
+    "sundering", "the sundering"
+  ];
+
+  const input = document.getElementById("wisdomInput");
+  const btn = document.getElementById("wisdomBtn");
+  const msg = document.getElementById("wisdomMsg");
+  const reveal = document.getElementById("keyReveal");
+
+  // Allow Enter key to submit
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") btn.click();
+  });
+
+  btn.addEventListener("click", () => {
+    const v = (input.value || "").trim().toLowerCase();
+
+    if (ACCEPTED.includes(v)) {
+      localStorage.setItem(KEY_STORAGE, KEY_WORD);
+
+      msg.textContent = "Correct. The fracture yields.";
+
+      reveal.style.display = "block";
+      reveal.innerHTML = `
+        <div class="row">
+          <span class="label">WORD OF OPENING:</span>
+          <span class="value">${KEY_WORD}</span>
+        </div>
+        <div class="stamp">Carry it to the Abyss. Speak it once.</div>
+      `;
+    } else {
+      msg.textContent = "Incorrect. The rite refuses you.";
+    }
+  });
+</script>
       <h2>OBSERVATION: THE WORLD BECAME MANY</h2>
       <p>
         A fracture line can be followed like a map. Each step is a different reality,
