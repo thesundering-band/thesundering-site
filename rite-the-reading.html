@@ -274,12 +274,15 @@
       btn.setAttribute("data-glyph", g.id);
 
       btn.innerHTML = `
-        <div class="glyphTop">
-          <div class="glyphName">${g.name}</div>
-          <div class="glyphMark">✶</div>
-        </div>
-        <div class="glyphHint">${g.hint}</div>
-      `;
+  <div class="glyphTop">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <img class="glyphIcon" src="${g.icon}" alt="${g.name} glyph" />
+      <div class="glyphName">${g.name}</div>
+    </div>
+    <div class="glyphMark">✶</div>
+  </div>
+  <div class="glyphHint">${g.hint}</div>
+`;
 
       btn.addEventListener("click", () => {
         if (drawn >= MAX_DRAWS) return;
