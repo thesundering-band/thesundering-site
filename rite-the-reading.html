@@ -209,44 +209,49 @@
     // --- Rite of Reading: Glyph draw ---
     // Keep it simple: 3 picks, then unlock the reward box.
     const glyphs = [
-      {
-        id: "source",
-        name: "THE SOURCE",
-        hint: "All power has a mouth.",
-        reveal: "They found the Source—raw, endless, uncontained. It was never meant to be held."
-      },
-      {
-        id: "cabal",
-        name: "THE CABAL",
-        hint: "Hunger wearing a crown.",
-        reveal: "A cabal of mages mistook ambition for wisdom. They cut into the root of magic."
-      },
-      {
-        id: "breach",
-        name: "THE BREACH",
-        hint: "A door that should not open.",
-        reveal: "The breach worked—for a moment. Then the moment broke the world around it."
-      },
-      {
-        id: "fracture",
-        name: "THE FRACTURE",
-        hint: "One world becomes many.",
-        reveal: "Reality splintered into worlds. Each fragment carries the same wound in a new shape."
-      },
-      {
-        id: "veil",
-        name: "THE VEIL",
-        hint: "What watches back.",
-        reveal: "Between worlds, the Veil thinned. Something pressed against it… and learned your name."
-      },
-      {
-        id: "witness",
-        name: "THE WITNESS",
-        hint: "You are part of the record.",
-        reveal: "The Sundering does not end. It repeats—each time someone looks too closely."
-      }
-    ];
-
+  {
+    id: "source",
+    name: "THE SOURCE",
+    icon: "assets/glyphs/source.png",
+    hint: "All power has a mouth.",
+    reveal: "They found the Source—raw, endless, uncontained. It was never meant to be held."
+  },
+  {
+    id: "cabal",
+    name: "THE CABAL",
+    icon: "assets/glyphs/cabal.png",
+    hint: "Hunger wearing a crown.",
+    reveal: "A cabal of mages mistook ambition for wisdom. They cut into the root of magic."
+  },
+  {
+    id: "breach",
+    name: "THE BREACH",
+    icon: "assets/glyphs/breach.png",
+    hint: "A door that should not open.",
+    reveal: "The breach worked—for a moment. Then the moment broke the world around it."
+  },
+  {
+    id: "fracture",
+    name: "THE FRACTURE",
+    icon: "assets/glyphs/fracture.png",
+    hint: "One world becomes many.",
+    reveal: "Reality splintered into worlds. Each fragment carries the same wound in a new shape."
+  },
+  {
+    id: "veil",
+    name: "THE VEIL",
+    icon: "assets/glyphs/veil.png",
+    hint: "What watches back.",
+    reveal: "Between worlds, the Veil thinned. Something pressed against it… and learned your name."
+  },
+  {
+    id: "witness",
+    name: "THE WITNESS",
+    icon: "assets/glyphs/witness.png",
+    hint: "You are part of the record.",
+    reveal: "The Sundering does not end. It repeats—each time someone looks too closely."
+  }
+];
     const MAX_DRAWS = 3;
 
     const grid = document.getElementById("glyphGrid");
