@@ -40,6 +40,62 @@
         </audio>
         <div class="tagline">placeholder audio · use a nastiest teaser or secret demo</div>
       </div>
+      <div class="audioBox">
+  <div class="top">
+    <span>RITE OF UNSEALING</span>
+    <span class="kbd">Word required</span>
+  </div>
+
+  <p class="tagline">Speak the Word of Opening to unseal the Abyss.</p>
+
+  <input id="abyssKeyInput" placeholder="enter the word…" style="width:100%;padding:12px;border-radius:12px;border:1px solid rgba(143,134,170,.35);background:rgba(0,0,0,.25);color:#fff;font-family:var(--mono);" />
+
+  <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;">
+    <button id="abyssKeyBtn" style="padding:10px 12px;border-radius:12px;border:1px solid rgba(143,134,170,.35);background:rgba(143,134,170,.10);color:#fff;font-family:var(--mono);cursor:pointer;">
+      UNSEAL
+    </button>
+    <span id="abyssKeyMsg" class="tagline"></span>
+  </div>
+</div>
+
+<script>
+  // --- The Sundering: Abyss gate (Option A: localStorage) ---
+  const KEY_STORAGE = "sundering_key_v1";
+  const REQUIRED = "PEAK";
+
+  const input = document.getElementById("abyssKeyInput");
+  const btn = document.getElementById("abyssKeyBtn");
+  const msg = document.getElementById("abyssKeyMsg");
+  const reward = document.getElementById("abyssReward");
+
+  // If they already earned the key, prefill it (feels magical)
+  const stored = localStorage.getItem(KEY_STORAGE);
+  if (stored) input.value = stored;
+
+  function grantAccess(){
+    msg.textContent = "SEAL BROKEN. ACCESS GRANTED.";
+    if (reward) reward.style.display = "block";
+  }
+
+  function denyAccess(){
+    msg.textContent = "INCORRECT. THE ABYSS REMAINS SEALED.";
+    if (reward) reward.style.display = "none";
+  }
+
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") btn.click();
+  });
+
+  btn.addEventListener("click", () => {
+    const v = (input.value || "").trim().toUpperCase();
+    if (v === REQUIRED) grantAccess();
+    else denyAccess();
+  });
+
+  // Optional: auto-unseal if stored key is already correct
+  if ((stored || "").toUpperCase() === REQUIRED) grantAccess();
+</script>
+      
       <div id="abyssReward" style="display:none;">
   <!-- PUT YOUR SECRET DEMO / AUDIO / LINKS IN HERE -->
 </div>
