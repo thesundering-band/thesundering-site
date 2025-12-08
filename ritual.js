@@ -36,7 +36,7 @@
     const visited = s.visited || {};
     const count = Object.keys(visited).length;
     if(count >= 5){
-      secretEl.innerHTML = `<a class="btn" href="room-abyss.html">
+      secretEl.innerHTML = `<a class="btn" href="rite-the-abyss.html">
         UNSEAL: THE ABYSS <small>access granted</small>
       </a>`;
     } else {
