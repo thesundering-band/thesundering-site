@@ -1,68 +1,320 @@
 <!doctype html>
-<html lang="en" data-page="altar">
+<html lang="en" data-page="reading">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>The Sundering — The Altar</title>
+  <title>The Sundering — Rite of Reading</title>
   <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="The Reading: glyphs that recount the Sundering." />
+  <style>
+    /* Room-specific UI */
+    .readingGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 880px){
+      .readingGrid{ grid-template-columns: 1fr; }
+    }
+
+    .glyphBtn{
+      text-align:left;
+      border: 1px solid rgba(143,134,170,.28);
+      background: rgba(0,0,0,.22);
+      border-radius: 16px;
+      padding: 14px;
+      cursor:pointer;
+      color: rgba(233,230,245,.92);
+      font-family: var(--mono);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow:hidden;
+      min-height: 94px;
+    }
+    .glyphBtn:hover{
+      border-color: rgba(143,134,170,.55);
+      box-shadow: 0 0 0 4px rgba(143,134,170,.08), var(--shadow);
+    }
+    .glyphBtn:disabled{
+      opacity:.6;
+      cursor:not-allowed;
+    }
+
+    .glyphTop{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .glyphName{
+      letter-spacing: .9px;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgba(233,230,245,.9);
+    }
+    .glyphMark{
+      font-size: 12px;
+      color: rgba(233,230,245,.6);
+    }
+    .glyphHint{
+      margin-top: 8px;
+      font-size: 12px;
+      color: rgba(233,230,245,.65);
+      line-height: 1.35;
+      font-family: var(--sans);
+    }
+
+    .revealBox{
+      margin-top: 14px;
+      border-radius: 16px;
+      border: 1px dashed rgba(143,134,170,.35);
+      padding: 12px;
+      background: rgba(0,0,0,.18);
+      min-height: 80px;
+    }
+
+    .revealLine{
+      font-family: var(--mono);
+      font-size: 12px;
+      color: rgba(233,230,245,.85);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .meter{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      margin-top: 10px;
+      font-family: var(--mono);
+      color: rgba(233,230,245,.7);
+      font-size: 12px;
+    }
+    .bar{
+      flex:1;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(143,134,170,.12);
+      border: 1px solid rgba(143,134,170,.25);
+      overflow:hidden;
+    }
+    .bar > div{
+      height:100%;
+      width:0%;
+      background: rgba(143,134,170,.45);
+      box-shadow: 0 0 22px rgba(143,134,170,.25);
+      transition: width .25s ease;
+    }
+
+    .unlock{
+      margin-top: 14px;
+      display:none;
+    }
+  </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="header">
       <div class="brand">
-        <div class="sigil">SIGIL</div>
+        <div class="sigil" title="Replace with your sigil later">SIGIL</div>
         <div>
-          <h1 class="glitch" data-text="THE ALTAR">THE ALTAR</h1>
-          <div class="sub">rite / vow / invocation</div>
+          <h1 class="glitch" data-text="THE READING">THE READING</h1>
+          <div class="sub">rite / glyph draw / omen</div>
         </div>
       </div>
       <div class="nav">
-        <a href="hallway.html">HALLWAY</a>
+        <a href="map.html">MAP</a>
         <a href="ending-escape.html">LISTEN</a>
-        <a href="ending-escape.html#contact">CONTACT</a>
+        <a href="ending-sundering.html">INITIATION</a>
       </div>
     </div>
 
     <div class="card">
-      <h2>RITE: SPEAK THE VOW</h2>
+      <h2>RITE I: THE READING</h2>
       <p>
-        The mages wrote their intent into stone. Intent is a blade: it cuts both ways.
-        You are here to witness the wound.
+        Before the Sundering, the cabal tried to crack open the Source of all magic.
+        Now the world exists as fragments—many realities, each slightly wrong.
       </p>
-
-      <div class="audioBox">
-        <div class="top">
-          <span>REDACTED AUDIO: “ALTAR_SNIP_01”</span>
-          <span class="kbd">00:14</span>
-        </div>
-        <!-- Replace src with your snippet later -->
-        <audio controls preload="none">
-          <source src="assets/placeholder-snippet.mp3" type="audio/mpeg">
-        </audio>
-        <div class="tagline">placeholder audio · replace with a breakdown/vocal moment</div>
-      </div>
+      <p class="tagline">
+        Draw three glyphs. Each glyph reveals a piece of what happened.
+      </p>
 
       <div class="evidence">
         <div class="row">
-          <span class="label">SIGIL:</span><span class="value">MARKED</span>
-          <span class="label">OFFERING:</span><span class="value">ATTENTION</span>
+          <span class="label">INSTRUCTION:</span><span class="value">choose 3 glyphs</span>
+          <span class="label">RULE:</span><span class="value">the reading cannot be undone</span>
         </div>
-        <div class="stamp">TEXT FRAGMENT: <span>“the rite does not end. it recurs.”</span></div>
+        <div class="stamp">You are not browsing. You are witnessing.</div>
       </div>
 
-      <div class="choice">
-        <a class="btn" href="room-fracture.html">CONTINUE: INTO THE FRACTURE <small>the worlds split</small></a>
-        <a class="btn" href="ending-escape.html">ESCAPE: FULL LISTEN <small>spotify / bandcamp</small></a>
-        <a class="btn" href="ending-sundering.html">ACCEPT: INITIATION <small>discord / cassette list</small></a>
+      <div class="meter">
+        <span id="countText">GLYPHS DRAWN: 0/3</span>
+        <div class="bar" aria-hidden="true"><div id="barFill"></div></div>
+        <span class="kbd" id="statusText">UNCAST</span>
       </div>
-    </div>
 
-    <div class="footer">
-      <div><span data-rite-progress></span></div>
-      <div><a href="index.html">RESTART RITE</a></div>
+      <div class="readingGrid" id="glyphGrid">
+        <!-- Buttons injected by JS -->
+      </div>
+
+      <div class="revealBox" id="revealBox">
+        <p class="revealLine" id="revealLine">
+          The table is empty. Draw a glyph.
+        </p>
+      </div>
+
+      <div class="audioBox unlock" id="rewardBox">
+        <div class="top">
+          <span>PROPHECY AUDIO: “READING_SNIP_01”</span>
+          <span class="kbd">00:14</span>
+        </div>
+        <!-- Replace with a real snippet later -->
+        <audio controls preload="none">
+          <source src="assets/placeholder-snippet.mp3" type="audio/mpeg" />
+        </audio>
+        <div class="tagline">Unlocked by completing the reading.</div>
+
+        <div class="choice" style="margin-top:12px;">
+          <a class="btn" href="rite-of-wisdom.html">
+            CONTINUE: RITE OF WISDOM <small>earn the Word of Opening</small>
+          </a>
+          <a class="btn" href="rite-of-sacrifice.html">
+            OFFERING: THE SACRIFICE <small>join the list</small>
+          </a>
+          <a class="btn" href="ending-escape.html">
+            ESCAPE: FULL LISTEN <small>spotify / bandcamp</small>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div><span data-rite-progress></span></div>
+        <div>
+          <a href="index.html">RESTART</a>
+        </div>
+      </div>
     </div>
   </div>
 
   <script src="ritual.js"></script>
+  <script>
+    // --- Rite of Reading: Glyph draw ---
+    // Keep it simple: 3 picks, then unlock the reward box.
+    const glyphs = [
+      {
+        id: "source",
+        name: "THE SOURCE",
+        hint: "All power has a mouth.",
+        reveal: "They found the Source—raw, endless, uncontained. It was never meant to be held."
+      },
+      {
+        id: "cabal",
+        name: "THE CABAL",
+        hint: "Hunger wearing a crown.",
+        reveal: "A cabal of mages mistook ambition for wisdom. They cut into the root of magic."
+      },
+      {
+        id: "breach",
+        name: "THE BREACH",
+        hint: "A door that should not open.",
+        reveal: "The breach worked—for a moment. Then the moment broke the world around it."
+      },
+      {
+        id: "fracture",
+        name: "THE FRACTURE",
+        hint: "One world becomes many.",
+        reveal: "Reality splintered into worlds. Each fragment carries the same wound in a new shape."
+      },
+      {
+        id: "veil",
+        name: "THE VEIL",
+        hint: "What watches back.",
+        reveal: "Between worlds, the Veil thinned. Something pressed against it… and learned your name."
+      },
+      {
+        id: "witness",
+        name: "THE WITNESS",
+        hint: "You are part of the record.",
+        reveal: "The Sundering does not end. It repeats—each time someone looks too closely."
+      }
+    ];
+
+    const MAX_DRAWS = 3;
+
+    const grid = document.getElementById("glyphGrid");
+    const revealLine = document.getElementById("revealLine");
+    const revealBox = document.getElementById("revealBox");
+    const countText = document.getElementById("countText");
+    const barFill = document.getElementById("barFill");
+    const statusText = document.getElementById("statusText");
+    const rewardBox = document.getElementById("rewardBox");
+
+    let drawn = 0;
+    const used = new Set();
+
+    function updateMeter(){
+      countText.textContent = `GLYPHS DRAWN: ${drawn}/${MAX_DRAWS}`;
+      barFill.style.width = `${(drawn / MAX_DRAWS) * 100}%`;
+      statusText.textContent = drawn === 0 ? "UNCAST" : (drawn < MAX_DRAWS ? "IN PROGRESS" : "COMPLETE");
+    }
+
+    function unlock(){
+      rewardBox.style.display = "block";
+      // Bonus: set a flag for other rooms if you want later
+      localStorage.setItem("sundering_reading_complete_v1", "true");
+    }
+
+    function makeButton(g){
+      const btn = document.createElement("button");
+      btn.className = "glyphBtn";
+      btn.type = "button";
+      btn.setAttribute("data-glyph", g.id);
+
+      btn.innerHTML = `
+        <div class="glyphTop">
+          <div class="glyphName">${g.name}</div>
+          <div class="glyphMark">✶</div>
+        </div>
+        <div class="glyphHint">${g.hint}</div>
+      `;
+
+      btn.addEventListener("click", () => {
+        if (drawn >= MAX_DRAWS) return;
+        if (used.has(g.id)) return;
+
+        used.add(g.id);
+        drawn += 1;
+
+        // Reveal text
+        revealLine.textContent = g.reveal;
+
+        // Visual “marked”
+        btn.querySelector(".glyphMark").textContent = "MARKED";
+        btn.disabled = true;
+
+        updateMeter();
+
+        // When complete, unlock reward
+        if (drawn >= MAX_DRAWS){
+          revealBox.style.borderStyle = "solid";
+          revealBox.style.borderColor = "rgba(143,134,170,.45)";
+          revealLine.textContent = "The reading is complete. The fracture recognizes you.";
+          unlock();
+
+          // Disable remaining buttons
+          [...grid.querySelectorAll("button.glyphBtn")].forEach(b => b.disabled = true);
+        }
+      });
+
+      return btn;
+    }
+
+    // Render glyph buttons
+    glyphs.forEach(g => grid.appendChild(makeButton(g)));
+    updateMeter();
+  </script>
 </body>
 </html>
